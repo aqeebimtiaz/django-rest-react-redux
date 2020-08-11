@@ -6,6 +6,8 @@ import { getLeads, deleteLead } from "../../actions/leads";
 export class Leads extends Component {
     static propTypes = {
         leads: PropTypes.array.isRequired,
+        getLeads: PropTypes.func.isRequired,
+        deleteLead: PropTypes.func.isRequired
     };
 
     componentDidMount() {
@@ -18,11 +20,13 @@ export class Leads extends Component {
                 <h2>Leads</h2>
                 <table className="table table-striped">
                     <thead>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Message</th>
-                        <th></th>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th></th>
+                        </tr>
                     </thead>
                     <tbody>
                         {this.props.leads.map((lead) => (
